@@ -4,11 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp"
     android:background="#49A0E2"
-    tools:context=".main.Menu">
-
+    tools:context=".main.ChooseAct">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,27 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <EditText
-                android:id="@+id/edtUsername"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/botron_button"
-                android:textColor="#000000"
-                android:hint="Tên đăng nhập"
-                android:singleLine="true"
-                android:padding="5dp"/>
-            <EditText
-                android:id="@+id/edtPassword"
-                android:layout_marginBottom="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:background="@drawable/botron_button"
-                android:textColor="#000000"
-                android:hint="Mật khẩu"
-                android:inputType="textPassword"
-                android:singleLine="true"
-                android:padding="5dp"/>
+
+
             <Button
                 android:id="@+id/btnLogin"
                 android:layout_marginBottom="10dp"
@@ -61,24 +39,20 @@
                 android:textColor="#ffffff"
                 android:background="@drawable/botron_nut"
                 android:padding="4dp"/>
+            <Button
+                android:id="@+id/btnCreate"
+                android:layout_marginBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Đăng Kí"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:background="@drawable/botron_nut"
+                android:padding="4dp"/>
 
 
         </LinearLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvRegister"
-        android:layout_alignParentBottom="true"
-        android:background="#0377A6"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="Đăng ký tài khoản"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:textColor="#ffffff"/>
-
-
-
 
 </RelativeLayout>

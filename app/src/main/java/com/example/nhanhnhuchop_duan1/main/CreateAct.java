@@ -1,14 +1,16 @@
-package com.example.nhanhnhuchop_duan1;
+package com.example.nhanhnhuchop_duan1.main;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class Menu extends AppCompatActivity {
+import com.example.nhanhnhuchop_duan1.R;
+
+public class CreateAct extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_menu);
+        setContentView(R.layout.activity_create);
     }
 }

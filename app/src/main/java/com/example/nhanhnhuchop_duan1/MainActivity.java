@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.nhanhnhuchop_duan1.main.ChooseAct;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 /* Create an Intent that will start the Menu-Activity. */
-                Intent mainIntent = new Intent(MainActivity.this,Menu.class);
+                Intent mainIntent = new Intent(MainActivity.this, ChooseAct.class);
                 MainActivity.this.startActivity(mainIntent);
                 MainActivity.this.finish();
             }
