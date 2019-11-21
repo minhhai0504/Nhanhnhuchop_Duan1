@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.CreateAct"></activity>
+        <activity android:name=".main.BXHactivity"></activity>
+        <activity android:name=".main.CreateAct" />
         <activity android:name=".main.ChooseAct" />
         <activity android:name=".main.Menu" />
         <activity android:name=".MainActivity">
