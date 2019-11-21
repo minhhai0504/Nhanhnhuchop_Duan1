@@ -20,6 +20,7 @@
             android:layout_gravity="center"
             android:src="@drawable/icon_bxh" />
         <androidx.recyclerview.widget.RecyclerView
+            android:background="#AD6F45"
             android:id="@+id/recycleBXH"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="30dp"

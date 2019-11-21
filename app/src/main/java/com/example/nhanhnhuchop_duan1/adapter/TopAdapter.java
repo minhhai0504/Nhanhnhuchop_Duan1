@@ -14,9 +14,9 @@ import com.example.nhanhnhuchop_duan1.model.User;
 
 import java.util.List;
 
-public class TopAdapter extends RecyclerView.Adapter{
+public class TopAdapter extends RecyclerView.Adapter<TopAdapter.TopHolder> {
     List<User> userList;
-    Context context;
+    Context  context;
 
     public TopAdapter(List<User> userList, Context context) {
         this.userList = userList;
@@ -25,29 +25,30 @@ public class TopAdapter extends RecyclerView.Adapter{
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_user,parent,false);
-        return new TopViewHolder(view);
+    public TopHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.item_user, parent, false);
+        return new TopHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-
+    public void onBindViewHolder(@NonNull TopHolder holder, int position) {
+        holder.tvUser.setText(userList.get(position).getUsername());
+        holder.tvPoint.setText(userList.get(position).getPoint());
 
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return userList.size();
     }
-    class TopViewHolder extends RecyclerView.ViewHolder{
-        public TextView tvUser;
-        public TextView tvPoint;
+
+    public class TopHolder extends RecyclerView.ViewHolder {
+        private TextView tvUser;
+        private TextView tvPoint;
 
 
 
-
-        public TopViewHolder(@NonNull View itemView) {
+        public TopHolder(@NonNull View itemView) {
             super(itemView);
             tvUser = (TextView) itemView.findViewById(R.id.tvUser);
             tvPoint = (TextView) itemView.findViewById(R.id.tvPoint);

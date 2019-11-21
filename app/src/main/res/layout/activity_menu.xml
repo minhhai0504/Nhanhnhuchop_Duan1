@@ -51,6 +51,7 @@
                 android:singleLine="true"
                 android:padding="5dp"/>
             <Button
+                android:onClick="Login"
                 android:id="@+id/btnLogin"
                 android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
@@ -67,6 +68,7 @@
     </LinearLayout>
 
     <TextView
+        android:fontFamily="@font/textgame"
         android:id="@+id/tvRegister"
         android:layout_alignParentBottom="true"
         android:background="#0377A6"
