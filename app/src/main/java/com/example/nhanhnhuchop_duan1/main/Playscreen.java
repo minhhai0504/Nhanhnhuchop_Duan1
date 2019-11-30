@@ -1,7 +1,10 @@
 package com.example.nhanhnhuchop_duan1.main;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -36,6 +39,7 @@ public class Playscreen extends AppCompatActivity {
     private int point = 10;
     private int point1 = 0;
     private String user;
+    private Playscreen playscreen;
 
     private String valueTrue;
     CountDownTimer countDownTimer;
@@ -47,7 +51,7 @@ public class Playscreen extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_playscreen);
         fastSqlite = new FastSqlite(this);
-        Bundle bundle =getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();
         user = bundle.getString("user");
         tvDiem = (TextView) findViewById(R.id.tvDiem);
         tvQuestion = (TextView) findViewById(R.id.tvQuestion);
@@ -77,7 +81,7 @@ public class Playscreen extends AppCompatActivity {
 
                     point1 += point;
                     tvDiem.setText(String.valueOf(point1));
-                    fastSqlite.updaptePoint(user,String.valueOf(point1));
+                    fastSqlite.updaptePoint(user, String.valueOf(point1));
                     tvQuestion.setText("");
                     btnA.setText("");
                     btnB.setText("");
@@ -94,10 +98,21 @@ public class Playscreen extends AppCompatActivity {
                     btnD.setText(question.getD().trim());
                     valueTrue = question.getTrue();
                 } else {
-                    finish();
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(Playscreen.this);
+
+                    builder.setTitle("Sai Rồi!!!");
+
+                    builder.setMessage("Bạn muốn chơi lại?");
+                    builder.setCancelable(false);
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                 }
-
-
             }
         });
 
@@ -111,7 +126,7 @@ public class Playscreen extends AppCompatActivity {
                     dem++;
                     point1 += point;
                     tvDiem.setText(String.valueOf(point1));
-                    fastSqlite.updaptePoint(user,String.valueOf(point1));
+                    fastSqlite.updaptePoint(user, String.valueOf(point1));
                     tvQuestion.setText("");
                     btnA.setText("");
                     btnB.setText("");
@@ -129,7 +144,20 @@ public class Playscreen extends AppCompatActivity {
 
 
                 } else {
-                    finish();
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(Playscreen.this);
+
+                    builder.setTitle("Sai Rồi!!!");
+
+                    builder.setMessage("Bạn muốn chơi lại?");
+                    builder.setCancelable(false);
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                 }
 
 
@@ -145,7 +173,7 @@ public class Playscreen extends AppCompatActivity {
                 if (buttonText.equalsIgnoreCase(valueTrue)) {
                     point1 += point;
                     tvDiem.setText(String.valueOf(point1));
-                    fastSqlite.updaptePoint(user,String.valueOf(point1));
+                    fastSqlite.updaptePoint(user, String.valueOf(point1));
                     dem++;
                     tvQuestion.setText("");
                     btnA.setText("");
@@ -163,7 +191,20 @@ public class Playscreen extends AppCompatActivity {
                     valueTrue = question.getTrue();
 
                 } else {
-                    finish();
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(Playscreen.this);
+
+                    builder.setTitle("Sai Rồi!!!");
+
+                    builder.setMessage("Bạn muốn chơi lại?");
+                    builder.setCancelable(false);
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                 }
 
 
@@ -179,7 +220,7 @@ public class Playscreen extends AppCompatActivity {
                 if (buttonText.equalsIgnoreCase(valueTrue)) {
                     point1 += point;
                     tvDiem.setText(String.valueOf(point1));
-                    fastSqlite.updaptePoint(user,String.valueOf(point1));
+                    fastSqlite.updaptePoint(user, String.valueOf(point1));
                     dem++;
                     tvQuestion.setText("");
                     btnA.setText("");
@@ -197,7 +238,20 @@ public class Playscreen extends AppCompatActivity {
                     valueTrue = question.getTrue();
 
                 } else {
-                    finish();
+                    final AlertDialog.Builder builder = new AlertDialog.Builder(Playscreen.this);
+
+                    builder.setTitle("Sai Rồi!!!");
+
+                    builder.setMessage("Bạn muốn chơi lại?");
+                    builder.setCancelable(false);
+                    builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            finish();
+                        }
+                    });
+                    AlertDialog alertDialog = builder.create();
+                    alertDialog.show();
                 }
 
 
@@ -213,7 +267,26 @@ public class Playscreen extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Toast.makeText(Playscreen.this, "Hết Giờ!!!!", Toast.LENGTH_SHORT).show();
+                final AlertDialog.Builder builder = new AlertDialog.Builder(Playscreen.this);
+
+                builder.setTitle("Hết Giờ");
+
+                builder.setMessage("Bạn muốn chơi lại?");
+                builder.setCancelable(false);
+                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                    }
+                });
+                AlertDialog alertDialog = builder.create();
+                alertDialog.show();
             }
         }.start();
     }
@@ -232,4 +305,3 @@ public class Playscreen extends AppCompatActivity {
 
     }
 }
-

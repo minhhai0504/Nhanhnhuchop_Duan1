@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:padding="8dp"
     android:background="#49A0E2"
-    tools:context=".main.Menu">
+    tools:context=".main.LoginAct">
 
     <LinearLayout
         android:layout_width="match_parent"

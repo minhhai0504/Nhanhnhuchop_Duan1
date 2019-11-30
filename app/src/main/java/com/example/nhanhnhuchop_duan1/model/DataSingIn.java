@@ -1,4 +1,4 @@
-package com.example.nhanhnhuchop_duan1.main;
+package com.example.nhanhnhuchop_duan1.model;
 
 public class DataSingIn {
     private String nsme;

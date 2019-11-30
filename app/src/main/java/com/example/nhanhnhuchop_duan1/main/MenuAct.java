@@ -11,7 +11,7 @@ import android.widget.Button;
 
 import com.example.nhanhnhuchop_duan1.R;
 
-public class ChonAct extends AppCompatActivity {
+public class MenuAct extends AppCompatActivity {
     private Button btnPlay;
     private Button btnBXH;
     private Button btnThoat;
@@ -32,8 +32,8 @@ public class ChonAct extends AppCompatActivity {
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                startActivity(new Intent(ChonAct.this,Playscreen.class));
-                Intent intent = new Intent(ChonAct.this,Playscreen.class);
+//                startActivity(new Intent(MenuAct.this,Playscreen.class));
+                Intent intent = new Intent(MenuAct.this,Playscreen.class);
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("user",user);
                 intent.putExtras(bundle1);
@@ -46,13 +46,13 @@ public class ChonAct extends AppCompatActivity {
         btnBXH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChonAct.this,BXHactivity.class));
+                startActivity(new Intent(MenuAct.this,BXHactivity.class));
             }
         });
         btnThoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-             startActivity(new Intent(ChonAct.this,Menu.class));
+             startActivity(new Intent(MenuAct.this, LoginAct.class));
 
             }
         });

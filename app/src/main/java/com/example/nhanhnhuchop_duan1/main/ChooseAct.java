@@ -30,7 +30,7 @@ public class ChooseAct extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChooseAct.this, Menu.class));
+                startActivity(new Intent(ChooseAct.this, LoginAct.class));
             }
         });
         btnCreate.setOnClickListener(new View.OnClickListener() {

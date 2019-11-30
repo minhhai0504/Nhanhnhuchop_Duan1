@@ -10,12 +10,11 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.nhanhnhuchop_duan1.FastSqlite;
 import com.example.nhanhnhuchop_duan1.R;
 
-public class Menu extends AppCompatActivity {
+public class LoginAct extends AppCompatActivity {
     private EditText edtUsername;
     private EditText edtPassword;
     private Button btnLogin;
@@ -47,7 +46,7 @@ public class Menu extends AppCompatActivity {
 
 
                 if(s) {
-                    Intent i = new Intent(Menu.this, ChonAct.class);
+                    Intent i = new Intent(LoginAct.this, MenuAct.class);
                     Bundle bundle = new Bundle();
                     bundle.putString("user",user);
                     i.putExtras(bundle);

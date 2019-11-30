@@ -42,7 +42,6 @@ public class BXHactivity extends AppCompatActivity {
        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
 
-        // Khai báo Adapter (mn xem tiếp ví dụ dưới nhé)
         topAdapter = new TopAdapter(userList,this);
         recyclerView.setAdapter(topAdapter);
     }

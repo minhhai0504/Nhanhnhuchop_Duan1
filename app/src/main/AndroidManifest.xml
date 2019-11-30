@@ -10,11 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".main.Playscreen"></activity>
-        <activity android:name=".main.ChonAct" />
+        <activity android:name=".main.MenuAct" />
         <activity android:name=".main.BXHactivity" />
         <activity android:name=".main.CreateAct" />
         <activity android:name=".main.ChooseAct" />
-        <activity android:name=".main.Menu" />
+        <activity android:name=".main.LoginAct" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

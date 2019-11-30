@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="8dp"
     android:background="#49A0E2"
-    tools:context=".main.ChonAct">
+    tools:context=".main.MenuAct">
     <LinearLayout
         android:padding="8dp"
         android:layout_width="match_parent"

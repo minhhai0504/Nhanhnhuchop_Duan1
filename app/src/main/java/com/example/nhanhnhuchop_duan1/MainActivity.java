@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                /* Create an Intent that will start the Menu-Activity. */
+                /* Create an Intent that will start the LoginAct-Activity. */
                 Intent mainIntent = new Intent(MainActivity.this, ChooseAct.class);
                 MainActivity.this.startActivity(mainIntent);
                 MainActivity.this.finish();
