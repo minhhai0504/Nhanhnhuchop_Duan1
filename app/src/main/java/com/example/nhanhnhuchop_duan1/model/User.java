@@ -1,7 +1,7 @@
 package com.example.nhanhnhuchop_duan1.model;
 
 public class User {
-    String ID, username, password, point;
+    public String ID, username, password,point;
 
     public User(String ID, String username, String password, String point) {
         this.ID = ID;
@@ -12,7 +12,6 @@ public class User {
 
     public User() {
     }
-
 
     public String getID() {
         return ID;

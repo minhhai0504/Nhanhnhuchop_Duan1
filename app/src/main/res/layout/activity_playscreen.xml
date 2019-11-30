@@ -1,197 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#018cc5"
+    android:background="#49A0E2"
+    android:padding="8dp"
     tools:context=".main.Playscreen">
 
-    <ImageView
-        android:id="@+id/imgcancle"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="352dp"
-        android:layout_marginLeft="352dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginBottom="63dp"
-        android:src="@drawable/cancle"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginBottom="12dp"
-        android:src="@drawable/icontime"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/tvtime"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvtime"
-        app:layout_constraintVertical_bias="0.93" />
-
-    <ImageView
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="107dp"
-        android:layout_marginLeft="107dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginBottom="5dp"
-        android:src="@drawable/score"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/score"
-        app:layout_constraintStart_toEndOf="@+id/tvtime"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvtime"
-        android:layout_width="80dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="85dp"
-        android:layout_marginEnd="100dp"
-        android:layout_marginRight="100dp"
-        android:background="@color/white"
-        android:text="01:30"
-        android:textAlignment="center"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toStartOf="@+id/score"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:textSize="30dp"
-        android:text="0"
-        android:id="@+id/score"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginLeft="100dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginRight="50dp"
-        android:layout_marginBottom="7dp"
-        android:background="@color/white"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvtime"
-        app:layout_constraintTop_toBottomOf="@+id/imgcancle" />
 
     <LinearLayout
-        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvRegister"
+        android:background="#018cc5"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/icon_clock" />
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/tvTime"
+                android:layout_width="146dp"
+                android:layout_height="61dp"
+                android:layout_marginLeft="5dp" />
+
+            <TextView
+                android:id="@+id/tvDiem"
+                android:layout_width="60dp"
+                android:layout_height="match_parent" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/cup" />
+
+        </LinearLayout>
 
         <TextView
-
-            android:id="@+id/tvquestion"
+            android:id="@+id/tvQuestion"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_height="209dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/yellow"
-            android:padding="10dp"
-            android:text="Người ta xem môn thể thao là môn thể thao vua ?"
-            android:textSize="22dp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </LinearLayout>
+            android:background="@drawable/botron_nut" />
 
-    <LinearLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/imgnext"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
-
-        <Button
-            android:id="@+id/btnA"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="15dp"
-            android:text=" Bóng rổ"
-            android:textSize="22dp"
-            android:textStyle="bold" />
-
-        <Button
-            android:id="@+id/btnB"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:padding="15dp"
-            android:text=" Bóng đá"
-            android:textSize="22dp"
-            android:textStyle="bold" />
+            android:layout_marginRight="30dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnC"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:padding="15dp"
-            android:text=" Bóng chuyền"
-            android:textSize="22dp"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnA"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botron_button"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="#000000" />
 
-        <Button
-            android:id="@+id/btnD"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:background="@color/white"
-            android:padding="15dp"
-            android:text=" Điền kinh"
-            android:textSize="22dp"
-            android:textStyle="bold" />
+            <Button
+                android:id="@+id/btnB"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botron_button"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:singleLine="true"
+                android:textColor="#000000" />
+
+            <Button
+                android:id="@+id/btnC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botron_button"
+                android:padding="4dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnD"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botron_button"
+                android:padding="4dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
     </LinearLayout>
 
 
-    <ImageView
-        android:id="@+id/imgnext"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="335dp"
-        android:layout_marginLeft="335dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginRight="10dp"
-        android:src="@drawable/next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
