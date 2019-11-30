@@ -7,13 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.LinearLayout;
 
+import com.example.nhanhnhuchop_duan1.FastSqlite;
 import com.example.nhanhnhuchop_duan1.R;
 import com.example.nhanhnhuchop_duan1.adapter.TopAdapter;
 import com.example.nhanhnhuchop_duan1.model.User;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BXHactivity extends AppCompatActivity {
@@ -22,6 +21,7 @@ public class BXHactivity extends AppCompatActivity {
     private List<User>  userList;
 
     private TopAdapter topAdapter;
+    private FastSqlite fastSqlite;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,14 +30,9 @@ public class BXHactivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_bxhactivity);
         recyclerView =  findViewById(R.id.recycleBXH);
+        fastSqlite = new FastSqlite(this);
+        userList = fastSqlite.userListTop();
 
-        userList = new ArrayList<>();
-        for (int i = 0; i <15 ; i++) {
-            User user = new User();
-            user.setUsername("abc");
-            user.setPoint(i+"00 point");
-            userList.add(user);
-        }
 
         // sử dụng câu lệnh này nếu kích thước các hàng luôn
         // bằng nhau. việc này giúp list mượt hơn

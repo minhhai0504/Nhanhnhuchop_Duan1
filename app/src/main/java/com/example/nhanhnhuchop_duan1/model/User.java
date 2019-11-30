@@ -1,9 +1,10 @@
 package com.example.nhanhnhuchop_duan1.model;
 
 public class User {
-    public String ID, username, password,point;
+    public String ID, username, password;
+    public int point;
 
-    public User(String ID, String username, String password, String point) {
+    public User(String ID, String username, String password, int point) {
         this.ID = ID;
         this.username = username;
         this.password = password;
@@ -37,11 +38,11 @@ public class User {
         this.password = password;
     }
 
-    public String getPoint() {
+    public int getPoint() {
         return point;
     }
 
-    public void setPoint(String point) {
+    public void setPoint(int point) {
         this.point = point;
     }
 }

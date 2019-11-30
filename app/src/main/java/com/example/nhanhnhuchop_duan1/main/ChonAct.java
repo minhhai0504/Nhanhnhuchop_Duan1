@@ -26,11 +26,20 @@ public class ChonAct extends AppCompatActivity {
         btnPlay = (Button) findViewById(R.id.btnPlay);
         btnBXH = (Button) findViewById(R.id.btnBXH);
         btnThoat = (Button) findViewById(R.id.btnThoat);
+        Bundle bundle  = getIntent().getExtras();
+        final String user  = bundle.getString("user");
 
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(ChonAct.this,Playscreen.class));
+//                startActivity(new Intent(ChonAct.this,Playscreen.class));
+                Intent intent = new Intent(ChonAct.this,Playscreen.class);
+                Bundle bundle1 = new Bundle();
+                bundle1.putString("user",user);
+                intent.putExtras(bundle1);
+                startActivity(intent);
+
+
             }
         });
 

@@ -48,6 +48,9 @@ public class Menu extends AppCompatActivity {
 
                 if(s) {
                     Intent i = new Intent(Menu.this, ChonAct.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("user",user);
+                    i.putExtras(bundle);
                     startActivity(i);
                 }else {
                     return;

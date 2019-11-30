@@ -18,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.IDN;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,7 +26,7 @@ import static android.provider.Telephony.Carriers.PASSWORD;
 
 public class FastSqlite extends SQLiteOpenHelper {
     private static String DB_PATH = "";
-    private static String DB_NAME = "nhanh.db";
+    private static String DB_NAME = "Fast.db";
     private Context context;
     SQLiteDatabase sqLiteDatabase;
 
@@ -34,6 +35,7 @@ public class FastSqlite extends SQLiteOpenHelper {
     public String username = "USERNAME";
     public String password = "PASSWORD";
     public String Point = "POINT";
+
 
     public String Id = "ID";
     public String Question = "QUESTION";
@@ -165,7 +167,7 @@ public class FastSqlite extends SQLiteOpenHelper {
                     user.ID = cursor.getString(cursor.getColumnIndex(IdUser));
                     user.username = cursor.getString(cursor.getColumnIndex(username));
                     user.password = cursor.getString(cursor.getColumnIndex(password));
-                    user.point = cursor.getString(cursor.getColumnIndex(Point));
+                    user.point = Integer.parseInt(cursor.getString(cursor.getColumnIndex(Point)));
 
 
                     list.add(user);
@@ -183,7 +185,7 @@ public class FastSqlite extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
 
-        Cursor c = db.rawQuery("SELECT * FROM USER WHERE USERNAME = \"" + name +"\"" +"AND PASSWORD =\""+pass +"\"",null);
+        Cursor c = db.rawQuery("SELECT * FROM USER WHERE USERNAME = \"" + name + "\"" + "AND PASSWORD =\"" + pass + "\"", null);
 
 
         if (c.getCount() == 1) {
@@ -197,6 +199,77 @@ public class FastSqlite extends SQLiteOpenHelper {
         }
     }
 
+
+
+    public List<User> userListTop() {
+
+        List<User> list = new ArrayList<>();
+         sqLiteDatabase = this.getReadableDatabase();
+        String SQL = "SELECT * FROM USER ORDER BY POINT DESC  LIMIT 5 ";
+        Cursor cursor = sqLiteDatabase.rawQuery(SQL, null);
+        cursor.moveToFirst();
+
+        if (cursor != null) {
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+                    User user = new User();
+                    user.ID = cursor.getString(cursor.getColumnIndex(IdUser));
+                    user.username = cursor.getString(cursor.getColumnIndex(username));
+                    user.password = cursor.getString(cursor.getColumnIndex(password));
+                    user.point = Integer.parseInt(cursor.getString(cursor.getColumnIndex(Point)));
+
+                    list.add(user);
+                    cursor.moveToNext();
+
+                }
+                cursor.close();
+            }
+        }
+
+        return list;
+    }
+
+    public int updaptePoint(String username, String point) {
+        sqLiteDatabase = this.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("USERNAME", username);
+        contentValues.put("point", point);
+
+        return sqLiteDatabase.update("USER", contentValues, "USERNAME" + " = ?",
+                new String[]{username});
+
+    }
+
+    public Question getQurstion(String id) {
+        Question question = new Question();
+        SQLiteDatabase db = this.getReadableDatabase();
+        String select = "SELECT * FROM QUESTION WHERE ID= " + "\"" + id + "\"";
+        Cursor cursor = db.rawQuery(select, null);
+
+        if (cursor != null) {
+            if (cursor.getCount() > 0) {
+                cursor.moveToFirst();
+                while (!cursor.isAfterLast()) {
+
+                    question.Question = cursor.getString(cursor.getColumnIndex("QUESTION"));
+                    question.Id = cursor.getString(cursor.getColumnIndex("ID"));
+                    question.A = cursor.getString(cursor.getColumnIndex("A"));
+                    question.B = cursor.getString(cursor.getColumnIndex("B"));
+                    question.C = cursor.getString(cursor.getColumnIndex("C"));
+                    question.D = cursor.getString(cursor.getColumnIndex("D"));
+                    question.True = cursor.getString(cursor.getColumnIndex("TRUE"));
+                    cursor.moveToNext();
+                    return question;
+                }
+                cursor.close();
+            }
+        }
+
+        return null;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
 
@@ -205,13 +278,5 @@ public class FastSqlite extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
-    }
-
-    public Cursor fetch() {
-        Cursor cursor = this.sqLiteDatabase.query(SQLiteHelper.TABLE_NAME_STUDENT, new String[]{SQLiteHelper._ID, SQLiteHelper.NAME, SQLiteHelper.AGE}, null, null, null, null, null);
-        if (cursor != null) {
-            cursor.moveToFirst();
-        }
-        return cursor;
     }
 }

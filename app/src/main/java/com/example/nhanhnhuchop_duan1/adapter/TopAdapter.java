@@ -33,7 +33,7 @@ public class TopAdapter extends RecyclerView.Adapter<TopAdapter.TopHolder> {
     @Override
     public void onBindViewHolder(@NonNull TopHolder holder, int position) {
         holder.tvUser.setText(userList.get(position).getUsername());
-        holder.tvPoint.setText(userList.get(position).getPoint());
+        holder.tvPoint.setText(String.valueOf(userList.get(position).getPoint()));
 
     }
 
