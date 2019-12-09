@@ -3,7 +3,7 @@ package com.example.nhanhnhuchop_duan1.model;
 public class Question {
     public String Id,Question,A,B,C,D,True;
 
-    public Question(String id, String question, String a, String b, String c, String d, String aTrue, String point) {
+    public Question(String id, String question, String a, String b, String c, String d, String aTrue) {
         Id = id;
         Question = question;
         A = a;
@@ -28,9 +28,6 @@ public class Question {
         return Question;
     }
 
-    public void setQuestion(String question) {
-        Question = question;
-    }
 
     public String getA() {
         return A;
