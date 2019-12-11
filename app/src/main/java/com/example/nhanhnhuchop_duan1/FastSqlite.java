@@ -9,6 +9,7 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 
+import com.example.nhanhnhuchop_duan1.View.GetDataSql;
 import com.example.nhanhnhuchop_duan1.model.Question;
 import com.example.nhanhnhuchop_duan1.model.User;
 
@@ -25,6 +26,7 @@ public class FastSqlite extends SQLiteOpenHelper {
     private static String DB_NAME = "Fast.db";
     private Context context;
     SQLiteDatabase sqLiteDatabase;
+    private GetDataSql getDataSql;
 
 
     public String IdUser = "ID";
@@ -177,22 +179,41 @@ public class FastSqlite extends SQLiteOpenHelper {
         return list;
     }
 
-    public boolean checkLogin(String name, String pass) {
+    public boolean checkLogin(GetDataSql getDataSql,String name, String pass) {
 
+        this.getDataSql = getDataSql;
         SQLiteDatabase db = this.getWritableDatabase();
+        if (name.equals("")){
+            getDataSql.trongTaiKhoan();
+        }else if (pass.equals("")){
+            getDataSql.trongMatKhau();
 
-        Cursor c = db.rawQuery("SELECT * FROM USER WHERE USERNAME = \"" + name + "\"" + "AND PASSWORD =\"" + pass + "\"", null);
+        }else {
 
+            String SQL = "SELECT * FROM USER WHERE USERNAME = \"" + name + "\"";
+            Cursor c = db.rawQuery(SQL, null);
 
-        if (c.getCount() == 1) {
-            c.close();
-            db.close();
-            return true;
-        } else {
-            c.close();
-            db.close();
-            return false;
+            if (c.getCount() == 1) {
+                String SQL1  = "SELECT * FROM USER WHERE USERNAME = \"" + name + "\""+ "AND PASSWORD =\"" + pass + "\"";
+                c = db.rawQuery(SQL1,null);
+                if (c.getCount() == 1){
+                    getDataSql.thanhCong();
+                    c.close();
+                    db.close();
+                }else {
+                    getDataSql.saiMatKhau();
+                }
+                return true;
+            } else {
+                getDataSql.saiTaiKhoan();
+                c.close();
+                db.close();
+                return false;
+            }
+
         }
+
+        return false;
     }
 
 

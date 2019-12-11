@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="User"
+            type="com.example.nhanhnhuchop_duan1.model.User" />
+    </data>
+
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -31,6 +39,7 @@
             android:orientation="vertical">
 
             <EditText
+                android:text="@{User.username}"
                 android:id="@+id/edtUsername"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
@@ -41,6 +50,7 @@
                 android:singleLine="true"
                 android:textColor="#000000" />
             <EditText
+                android:text="@{User.password}"
                 android:id="@+id/edtPassword"
                 android:layout_marginBottom="10dp"
                 android:layout_width="match_parent"
@@ -84,3 +94,4 @@
 
 
 </RelativeLayout>
+</layout>
