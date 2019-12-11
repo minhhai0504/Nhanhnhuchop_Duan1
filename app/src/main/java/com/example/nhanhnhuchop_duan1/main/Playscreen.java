@@ -276,20 +276,17 @@ public class Playscreen extends AppCompatActivity {
                 builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-
-                    }
-                });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
                         finish();
                     }
                 });
                 AlertDialog alertDialog = builder.create();
                 alertDialog.show();
+
             }
         }.start();
     }
+
+
 
     private void getQuestion() {
 
@@ -304,4 +301,5 @@ public class Playscreen extends AppCompatActivity {
 
 
     }
+
 }

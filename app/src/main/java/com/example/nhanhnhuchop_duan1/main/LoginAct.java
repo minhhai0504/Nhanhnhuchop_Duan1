@@ -16,7 +16,6 @@ import android.widget.Toast;
 import com.example.nhanhnhuchop_duan1.FastSqlite;
 import com.example.nhanhnhuchop_duan1.R;
 import com.example.nhanhnhuchop_duan1.View.GetDataSql;
-import com.example.nhanhnhuchop_duan1.View.CreateView;
 import com.example.nhanhnhuchop_duan1.databinding.ActivityMenuBinding;
 
 public class LoginAct extends AppCompatActivity implements GetDataSql {

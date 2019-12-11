@@ -7,37 +7,49 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <RelativeLayout
+        android:gravity="center"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
-            android:id="@+id/imgAvatar"
-            android:layout_width="34dp"
-            android:layout_height="34dp"
-            android:src="@drawable/avatar" />
+        <LinearLayout
+            android:background="#2F858D"
+            android:padding="4dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/user" />
 
-        <TextView
-            android:id="@+id/tvUser"
-            android:layout_width="128dp"
-            android:layout_height="33dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
-            android:layout_toRightOf="@+id/imgAvatar" />
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:background="@drawable/botron_nut"
+                android:id="@+id/tvUser"
+                android:layout_width="154dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/imgAvatar"
+                android:textColor="#fff" />
 
-        <TextView
-            android:id="@+id/tvPoint"
-            android:layout_width="99dp"
-            android:layout_height="41dp"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
-            android:layout_toRightOf="@+id/tvUser" />
-        <ImageView
-            android:src="@drawable/cup"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
-            android:layout_toRightOf="@+id/tvPoint"
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/tvPoint"
+                android:layout_width="32dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/tvUser" />
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginLeft="8dp"
+                android:layout_toRightOf="@+id/tvPoint"
+                android:src="@drawable/cup" />
+        </LinearLayout>
     </RelativeLayout>
 
 </androidx.cardview.widget.CardView>

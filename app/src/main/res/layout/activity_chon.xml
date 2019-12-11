@@ -35,7 +35,7 @@
                 android:fontFamily="@font/textgame"
                 android:id="@+id/btnPlay"
                 android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="166dp"
                 android:layout_height="wrap_content"
                 android:text="Chơi Ngay"
                 android:textAllCaps="false"
@@ -43,25 +43,26 @@
                 android:textColor="#ffffff"
                 android:background="@drawable/botron_nut"
                 android:padding="4dp"/>
+
             <Button
-                android:layout_gravity="center"
-                android:fontFamily="@font/textgame"
                 android:id="@+id/btnBXH"
-                android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="166dp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/botron_nut"
+                android:fontFamily="@font/textgame"
+                android:padding="4dp"
                 android:text="Bảng Xếp Hạng"
                 android:textAllCaps="false"
-                android:textSize="20sp"
                 android:textColor="#ffffff"
-                android:background="@drawable/botron_nut"
-                android:padding="4dp"/>
+                android:textSize="20sp" />
             <Button
                 android:layout_gravity="center"
                 android:fontFamily="@font/textgame"
                 android:id="@+id/btnThoat"
                 android:layout_marginBottom="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="166dp"
                 android:layout_height="wrap_content"
                 android:text="Thoát"
                 android:textAllCaps="false"
