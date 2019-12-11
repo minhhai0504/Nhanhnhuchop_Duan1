@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    app:cardCornerRadius="4dp"
-    android:layout_margin="5dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical"
+    app:cardCornerRadius="4dp">
+
     <RelativeLayout
-        android:gravity="center"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:gravity="center">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:background="#2F858D"
-            android:padding="4dp"
             android:gravity="center"
             android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:padding="4dp">
+
             <ImageView
                 android:id="@+id/imgAvatar"
                 android:layout_width="34dp"
@@ -25,23 +27,26 @@
                 android:src="@drawable/user" />
 
             <TextView
-                android:gravity="center"
-                android:textStyle="bold"
-                android:background="@drawable/botron_nut"
                 android:id="@+id/tvUser"
                 android:layout_width="154dp"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
                 android:layout_toRightOf="@+id/imgAvatar"
-                android:textColor="#fff" />
+                android:background="@drawable/botron_nut"
+                android:gravity="center"
+                android:textColor="#fff"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tvPoint"
-                android:layout_width="32dp"
+                android:layout_width="42dp"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="8dp"
-                android:layout_toRightOf="@+id/tvUser" />
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@+id/tvUser"
+                android:background="@drawable/botron_nut"
+                android:textColor="#fff"
+                android:textStyle="bold" />
 
             <ImageView
                 android:layout_width="27dp"

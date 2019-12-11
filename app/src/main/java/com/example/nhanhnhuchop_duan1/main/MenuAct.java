@@ -52,7 +52,6 @@ public class MenuAct extends AppCompatActivity {
         btnThoat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MenuAct.this, LoginAct.class));
                 finish();
             }
         });

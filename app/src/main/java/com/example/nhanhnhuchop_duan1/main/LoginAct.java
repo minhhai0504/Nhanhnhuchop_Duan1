@@ -69,27 +69,27 @@ public class LoginAct extends AppCompatActivity implements GetDataSql {
 
     @Override
     public void saiTaiKhoan() {
-        Toast.makeText(this, "saiTaiKhoan", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sai tài khoản", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void saiMatKhau() {
-        Toast.makeText(this, "saiMatKhau", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sai mật khẩu", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void trongTaiKhoan() {
-        Toast.makeText(this, "trongTaiKhoan", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Bạn không được để trống tài khoản", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void trongMatKhau() {
-        Toast.makeText(this, "trongMatKhau", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Bạn không được để trống mật khẩu", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void thanhCong() {
-        Toast.makeText(this, "thanhCong", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Đăng nhập thành công", Toast.LENGTH_SHORT).show();
         Intent i = new Intent(LoginAct.this, MenuAct.class);
         Bundle bundle = new Bundle();
         bundle.putString("user", user);
